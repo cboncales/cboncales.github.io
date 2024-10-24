@@ -695,18 +695,37 @@ section,
 
 .hero .container {
   position: relative;
+  margin-inline: 239px;
+  margin-bottom: 150px;
   z-index: 3;
 }
 
 .hero h2 {
-  margin: 0;
   font-size: 64px;
   font-weight: 700;
+  line-height: 50px;
+}
+
+#lastname {
+  position: relative;
+  right: 3.5px;
+  /* color: #e9f5db; */
+  /* color: #cfe1b9; */
+  /* color: #b5c99a; */
+  /* color: #97a97c; */
+  color: #87986a;
+  /* color: #718355; */
+  /* color: #213a57; */
+  /* color: #0b6477; */
+  /* color: #14919b; */
+  /* color: #0ad1c8; */
+  /* color: #45dfb1; */
+  /* color: #80ed99; */
 }
 
 .hero p {
   margin: 5px 0 0 0;
-  font-size: 36px;
+  font-size: 25px;
   font-weight: 600;
 }
 
