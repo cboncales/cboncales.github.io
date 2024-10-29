@@ -863,7 +863,19 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Skills Section
+# Tech Stack Section
+--------------------------------------------------------------*/
+#tech-stack .stack-box {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#tech-stack .stack-box:hover {
+  transform: translateY(-5px);
+}
+
+/*--------------------------------------------------------------
+# Tech Stack Ratings Section
 --------------------------------------------------------------*/
 .skills .progress {
   height: 60px;
