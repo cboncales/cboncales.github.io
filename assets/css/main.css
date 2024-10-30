@@ -148,8 +148,8 @@ h6 {
 .header {
   --background-color: rgba(0, 0, 0, 0);
   color: var(--default-color);
-  background-color: var(--background-color);
-  padding: 15px 0;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 0;
   transition: all 0.5s;
   z-index: 997;
 }
@@ -168,6 +168,10 @@ h6 {
   margin: 0;
   font-weight: 700;
   color: var(--heading-color);
+}
+
+.header .logo h1 i {
+  color: var(--accent-color);
 }
 
 .scrolled .header {
@@ -335,10 +339,9 @@ h6 {
     display: none;
     list-style: none;
     position: absolute;
-    inset: 60px 20px 20px 20px;
+    inset: 0px;
     padding: 10px 0;
     margin: 0;
-    border-radius: 6px;
     background-color: var(--nav-mobile-background-color);
     border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
     box-shadow: none;
@@ -437,71 +440,39 @@ h6 {
   }
 
   .mobile-nav-active .navmenu > ul {
-    display: block;
+    display: flex;
+    padding-top: 100px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 }
 
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
-.footer {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  font-size: 14px;
-  text-align: center;
-  padding: 30px 0;
-  position: relative;
-}
-
-.footer h3 {
-  font-size: 36px;
-  font-weight: 700;
-  position: relative;
-  padding: 0;
-  margin: 0 0 15px 0;
-}
-
-.footer p {
-  font-size: 15;
-  font-style: italic;
-  padding: 0;
-  margin: 0 0 30px 0;
-}
-
-.footer .social-links {
-  margin: 0 0 30px 0;
-}
-
-.footer .social-links a {
-  font-size: 16px;
+.credits {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  line-height: 1;
-  margin: 0 4px;
-  border-radius: 50%;
-  text-align: center;
-  width: 36px;
-  height: 36px;
-  transition: 0.3s;
-}
-
-.footer .social-links a:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-  text-decoration: none;
-}
-
-.footer .copyright {
-  padding-top: 25px;
-  border-top: 1px solid
-    color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.footer .credits {
+  justify-content: end;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 15px;
   font-size: 13px;
-  padding-top: 5px;
+  color: #fff;
+  z-index: 999999;
+}
+
+/* .credits img {
+  transition: 0.3s;
+  animation: credits-img 5s infinite;
+} */
+
+@keyframes credits-img {
+  50% {
+    transform: rotateY(180deg);
+  }
 }
 
 /*--------------------------------------------------------------
@@ -521,11 +492,11 @@ h6 {
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #ffffff;
+  border: 10px solid #ffffff;
   border-color: var(--accent-color) transparent var(--accent-color) transparent;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   animation: animate-preloader 1.5s linear infinite;
 }
 
@@ -576,9 +547,17 @@ h6 {
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
+  }
+  .hero .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero .container .firstname {
+    padding-left: 45px;
   }
 }
 
@@ -776,9 +755,17 @@ section,
   background-color: var(--accent-color);
 }
 
+.hero::before {
+  content: "";
+  background: color-mix(in srgb, var(--background-color), transparent 50%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
 @media (max-width: 768px) {
   .hero h2 {
-    font-size: 32px;
+    font-size: 50px;
   }
 
   .hero p {
@@ -1262,15 +1249,6 @@ section,
 }
 
 .portfolio .portfolio-filters li {
-  /* cursor: pointer;
-  display: inline-block;
-  padding: 0;
-  font-size: 18px;
-  font-weight: 500;
-  margin: 0 10px;
-  line-height: 1;
-  margin-bottom: 5px;
-  transition: all 0.3s ease-in-out; */
   cursor: pointer;
   display: inline-block;
   padding: 8px 16px 10px 16px;
@@ -1301,7 +1279,7 @@ section,
 @media (max-width: 575px) {
   .portfolio .portfolio-filters li {
     font-size: 14px;
-    margin: 0 5px;
+    margin: 5px 5px;
   }
 }
 
@@ -1387,7 +1365,7 @@ section,
 }
 
 .cert-content:hover .cert-info {
-  opacity: 1;
+  opacity: 0;
 }
 
 .testimonial-item:hover .cert-img {
