@@ -1262,7 +1262,7 @@ section,
 }
 
 .portfolio .portfolio-filters li {
-  cursor: pointer;
+  /* cursor: pointer;
   display: inline-block;
   padding: 0;
   font-size: 18px;
@@ -1270,12 +1270,24 @@ section,
   margin: 0 10px;
   line-height: 1;
   margin-bottom: 5px;
+  transition: all 0.3s ease-in-out; */
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 16px 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 3px 10px 3px;
   transition: all 0.3s ease-in-out;
+  border-radius: 4px;
 }
 
 .portfolio .portfolio-filters li:hover,
 .portfolio .portfolio-filters li.filter-active {
-  color: var(--accent-color);
+  background-color: var(--accent-color);
 }
 
 .portfolio .portfolio-filters li:first-child {
@@ -1299,6 +1311,8 @@ section,
 }
 
 .portfolio .portfolio-content img {
+  width: 350px !important;
+  height: 230px !important;
   transition: 0.3s;
 }
 
@@ -1336,9 +1350,9 @@ section,
 .portfolio .portfolio-content .portfolio-info .preview-link,
 .portfolio .portfolio-content .portfolio-info .details-link {
   position: absolute;
-  left: calc(50% - 40px);
+  left: calc(55% - 40px);
   font-size: 26px;
-  top: calc(50% - 14px);
+  top: calc(45% - 14px);
   color: #fff;
   transition: 0.3s;
   line-height: 1.2;
@@ -1361,6 +1375,47 @@ section,
 
 .portfolio .portfolio-content:hover img {
   transform: scale(1.1);
+}
+
+.cert-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial-item .cert-img {
+  transition: 0.3s;
+}
+
+.cert-content:hover .cert-info {
+  opacity: 1;
+}
+
+.testimonial-item:hover .cert-img {
+  transform: scale(1.1);
+}
+
+.testimonial-item a {
+  position: absolute;
+  left: calc(55% - 40px);
+  font-size: 26px;
+  top: calc(45% - 14px);
+  color: #fff;
+  transition: 0.3s;
+  line-height: 1.2;
+}
+
+.testimonial-item a:hover {
+  color: var(--accent-color);
+}
+
+.testimonial-item .cert-info {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  transition: all ease-in-out 0.3s;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px;
 }
 
 /*--------------------------------------------------------------
