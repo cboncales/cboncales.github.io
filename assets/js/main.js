@@ -67,33 +67,31 @@
   /**
    * Preloader
    */
-  const preloader = document.querySelector("#preloader");
-  if (preloader) {
-    window.addEventListener("load", () => {
-      preloader.remove();
-    });
-  }
-
   // const preloader = document.querySelector("#preloader");
-
   // if (preloader) {
-  //   // Check if the preloader has been shown before
-  //   const isPreloaderShown = sessionStorage.getItem("preloaderShown");
-
-  //   if (!isPreloaderShown) {
-  //     window.addEventListener("load", () => {
-  //       // Add delay before removing the preloader (e.g., 2 seconds)
-  //       setTimeout(() => {
-  //         preloader.remove();
-  //         // Mark preloader as shown in session storage
-  //         sessionStorage.setItem("preloaderShown", "true");
-  //       }, 2700); // 2700 milliseconds = 2.7 seconds
-  //     });
-  //   } else {
-  //     // Remove preloader immediately if it was already shown
-  //     preloader.remove();
-  //   }
+  //   window.addEventListener("load", () => {
+  //     setTimeout(() => {
+  //       preloader.remove(); // Preloader stays visible for 5 seconds
+  //     }, 5000);
+  //   });
   // }
+
+  const preloader = document.querySelector("#preloader");
+
+  if (preloader) {
+    const isPreloaderShown = sessionStorage.getItem("preloaderShown");
+
+    if (!isPreloaderShown) {
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          preloader.remove();
+          sessionStorage.setItem("preloaderShown", "true");
+        }, 2700);
+      });
+    } else {
+      preloader.style.display = "none";
+    }
+  }
 
   /**
    * Scroll top button
