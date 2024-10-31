@@ -164,9 +164,9 @@ h6 {
 }
 
 .header .logo h1 {
-  font-size: 30px;
+  font-size: 36px;
   margin: 0;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--heading-color);
 }
 
@@ -217,16 +217,20 @@ h6 {
   .navmenu a,
   .navmenu a:focus {
     color: var(--nav-color);
-    font-size: 15px;
+    font-size: 17px;
     padding: 0 2px;
     font-family: var(--nav-font);
-    font-weight: 400;
+    font-weight: 500;
     display: flex;
     align-items: center;
     justify-content: space-between;
     white-space: nowrap;
     transition: 0.3s;
     position: relative;
+  }
+
+  .navmenu a span {
+    font-weight: 700;
   }
 
   .navmenu a i,
@@ -260,6 +264,49 @@ h6 {
   .navmenu .active,
   .navmenu .active:focus {
     color: var(--nav-hover-color);
+  }
+
+  /* Styles for the shine effect */
+  .shine-container {
+    position: relative;
+    display: inline-block; /* To contain the shine */
+    font: 900 16px "Orbitron", sans-serif; /* Adjust font size as needed */
+  }
+
+  .shine {
+    position: relative;
+    background: var(--accent-color); /* Background color for the text */
+    -webkit-background-clip: text; /* For text clipping */
+    -webkit-text-fill-color: transparent; /* Text fill color */
+  }
+
+  .shine::after {
+    content: "Hire Me"; /* The text to be shiny */
+    position: absolute; /* Absolute positioning for the shine */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0) 45%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0) 55%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make the text fill color transparent */
+    background-size: 200%; /* Background size for the shine */
+    animation: shine 1s infinite; /* Animation for the shine effect */
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: -100%; /* Start off to the left */
+    }
+    100% {
+      background-position: 100%; /* Move shine to the right */
+    }
   }
 
   .navmenu .dropdown ul {
@@ -355,7 +402,7 @@ h6 {
     color: var(--nav-dropdown-color);
     padding: 10px 20px;
     font-family: var(--nav-font);
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 500;
     display: flex;
     align-items: center;
